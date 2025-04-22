@@ -1,4 +1,7 @@
-:root {
+@import "tailwindcss";
+
+
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -34,9 +37,14 @@ a {
   color: inherit;
   text-decoration: none;
 }
+.header{
+  background-color: aquamarine;
+  flex: auto;
+  padding: 2px;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-}
+} */
