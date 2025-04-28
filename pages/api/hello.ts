@@ -1,13 +1,27 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
-  name: string;
+  id?: string | string[] | undefined;
+  name?: string;
+  age?: number;
+  massage?: string;
+  data?: object;
+  headers?: object;
 };
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>,
+  res: NextApiResponse<Data>
 ) {
-  res.status(200).json({ name: "John Doe" });
+  if (req.method === "POST") {
+    res.status(200).json({
+      id: req?.query?.id,
+      name: "Andre",
+      age: 20,
+      data: req.body,
+      headers: req.headers["postman-token"],
+    });
+  } else {
+    res.status(403).json({ massage: `Forbidden` });
+  }
 }
