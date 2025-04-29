@@ -19,7 +19,7 @@ export default function handler(
       name: "Andre",
       age: 20,
       data: req.body,
-      headers: req.headers["postman-token"],
+      // headers: req.headers["postman-token"],
     });
   } else {
     res.status(403).json({ massage: `Forbidden` });
